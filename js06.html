@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dangky(){
+            var ten = document.forms.reg["txtTen"].value;
+            var mk = document.forms.reg ["txtMk"].value;
+            var ng = document.forms.reg["txtNs"].value;
+            var gt = document.forms.reg["gt"].value;
+            var qt = document.forms.reg["qt"].value;
+            document.forms.reg["thongtin"].value = "chao mung"+ ten +
+            "\nBan la :" + gt +"\nMat khau" + Mk.length +"Ki tu \n" + "\nBan sinh ngay" + ng + "\nVan de ban quan tam :" + gt;
+            return false;
+        }
+        function check(d) {
+            if (d==null){
+                alert("invalid");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="reg" onsubmit="return dangki()">
+        <table>
+            <caption>Dang Ki Thanh Vien </caption>
+            <tr>
+                <td>ten dang nhap</td>
+                <td><input type="text " name ="txtTen" required></td>
+            </tr>
+            <tr>
+                <td>Mat Khau</td>
+                <td><input type="matkhau " name ="txtMk" required></td>
+            </tr>
+            <tr>
+                <td>Ngay sing</td>
+                <td><input type="date " name ="txtNs" required></td>
+            </tr>
+            <tr>
+                <td>Gioi tinh</td>
+                <td>
+                    <input type="radio" name="gt" value="nam" checked>nam 
+                    <input type="radio" name="gt" value="nu" checked>nu
+                </td>
+            </tr>
+            <tr>
+                <td>Van de ban quan tam </td>
+                <td>
+                    <select name="qt">
+                        <option value="kinh te">Kinh te</option>
+                        <option value="van hoa">van hoa</option>
+                        <option value="nghe thuat">nghe thuat</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="aubmit" value="dang ky"></td>
+                <td><input type="reset" value="Huy"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="thongtin" rows="6" cols="50"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

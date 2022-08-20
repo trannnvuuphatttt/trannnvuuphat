@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        a{
+            border: 1px solid black;
+            color:white;
+            font-weight: bold;
+            font-size: large;
+            background-color: blueviolet;
+    
+        }
+        a:hover{
+            color:yellow;
+        }
+    </style>
+    </head>
+    <body>
+        <a href="../jqery.html">Về trang trước</a>
+        <br>
+    Tên môn học: <input type="text" id="MH"/>
+    <br>
+    <ul>
+        <li>Python</li>
+        <li>PHP</li>
+    </ul>
+    <button>Thêm môn học</button>
+    <script>
+        $(document).ready(function(){
+            $(document).click(function(){
+                var str="<li>"+$("#MH").val()+"</li>";
+                $("ul").append(str);
+                $("#MH").val("");
+            });
+        });
+    </script>
+</body>
+</html>

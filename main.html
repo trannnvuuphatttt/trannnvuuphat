@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Game Bầu Cua Nhà Làm</title>
+</head>
+<body>
+<script>
+page="{_$do|play}";
+chon="{_$select|bau}";
+diem="{_$p,500}";
+</script>
+<script>
+if(page=="play")
+    {
+       document.write("<"+"table width=\"150\"><tr><center><"+"b style=\"color:magenta;\">Điểm:</b><"+"font color=\"red\">"+diem+"</font><br/><center><"+"font color=\"blue\">Trúng 1 con cộng 100 điểm.Không trúng con nào trừ 50 điểm.</font></center></tr></table><br/><"+"table width=\"150\"><tr><form method=\"post\"><td width=\"50\" align=\"center\"><"+"input type=\"radio\" name=\"select\" value=\"bau\">Bầu<"+"img src=\"/hinhanhbaucua/0.png\"><br/><br/><"+"input type=\"radio\" name=\"select\" value=\"ca\">Cá<"+"img src=\"/hinhanhbaucua/3.png\"></td><td width=\"50\" align=\"center\"><"+"input type=\"radio\" name=\"select\" value=\"cua\">Cua<"+"img src=\"/hinhanhbaucua/1.png\"><br/><br/><"+"input type=\"radio\" name=\"select\" value=\"nai\">Nai<"+"img src=\"/hinhanhbaucua/4.png\"></td><td width=\"50\" align=\"center\"><"+"input type=\"radio\" name=\"select\" value=\"tom\">Tôm<"+"img src=\"/hinhanhbaucua/2.png\"><br/><br/><"+"input type=\"radio\" name=\"select\" value=\"ga\">Gà<"+"img src=\"/hinhanhbaucua/5.png\"></td></tr></table><br/><"+"input type=\"hidden\" name=\"do\" value=\"ketqua\"><"+"input type=\"hidden\" name=\"p\" value='"+diem+"'><"+"table width=\"150\"><center><"+"input type=\"submit\" value=\"Xem kết quả\"></center></form></table>");
+    }
+if(page=="ketqua")
+    {
+       anh="";
+       dung=0;
+       dayaaa="bau cua tom ca nai ga";
+       dayaaa=dayaaa.split(" ");
+       dayaab="trái bầu,con cua,con tôm,con cá,con nai,con gà";
+       dayaab=dayaab.split(",");
+       daydung="Chúc mừng,bạn đoán đúng|oh yeah!|đúng rồi!";
+       daydung=daydung.split("|");
+       daysai="Ui!rất tiếc,Trật rồi,Bạn đoán sai rồi";
+       daysai=daysai.split(",");
+       randomds=Math.round(Math.random()*2);
+       for(a=0; a<4; a++)
+          {
+             rand=Math.round(Math.random()*5);
+             hi="<"+"img src='/hinhanhbaucua/"+rand+".png'>";
+             anh=anh+hi;
+             if(dayaaa[rand]==chon)
+                {
+                   dung=dung+1;
+                }
+          }
+       for(b=0; b<6; b++)
+          {
+             if(dayaaa[b]==chon)
+                {
+                   ten=dayaab[b];
+                }
+           }
+       if(dung>0)
+          {
+              cong=dung*100;
+              diem=diem+cong;
+              document.write("<"+"b style=\"color:magenta;\">Điểm:</b><"+"font color=\"red\">"+diem+"</font><br/><br/><center>"+anh+"</center><"+"font color=\"red\">"+daydung[randomds]+",có "+dung+" "+ten+".Bạn được cộng "+cong+" điểm.</font><br/>");
+          }
+       if((dung==0)&&(diem<100))
+          {
+             diem=diem-50;
+             document.write("<"+"b style=\"color:magenta;\">Điểm:</b><"+"font color=\"red\">"+diem+"</font><br/><br/><center>"+anh+"</center><"+"font color=\"green\">"+daysai[randomds]+",không có "+ten+" nào cả,bạn bị trừ 50 điểm.Bạn không đủ điểm để chơi tiếp!</font><br/><br/><center><form method=\"post\"><"+"input type=\"submit\" value=\"chơi lại\"></form></center>");
+          }
+       if((dung==0)&&(diem>=100))
+          {
+             diem=diem-50;
+             document.write("<"+"b style=\"color:magenta;\">Điểm:</b><"+"font color=\"red\">"+diem+"</font><br/><br/><center>"+anh+"</center><"+"font color=\"green\">"+daysai[randomds]+",không có "+ten+" nào cả,bạn bị trừ 50 điểm.</font><br/>");
+          }
+       if(diem>=100)
+          {
+             document.write("<center><form method=\"post\"><"+"input type=\"hidden\" name=\"do\" value=\"play\"><"+"input type=\"hidden\" name=\"p\" value='"+diem+"'><"+"input type=\"submit\" value=\"chơi tiếp\"></form></center>");
+          }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#divText{
+            width: auto;
+            height: auto;
+            background-color: #f00;
+            color: #ff0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function changecolor(){
+            var bkcolor =document.getElementById("bkcolor").value;
+            var textcolor =document.getElementById("textcolor").value;
+            document.getElementById("title").innerHTML=document.getElementById("txtInput").value;
+            document.getElementById("divText").style.backgroundColor=bkcolor;
+            document.getElementById("divText").style.color=textcolor;
+        }
+    </script>
+</head>
+<body>
+    <div id="divText">
+        <h1 id="title">WELCOME HTML !!!!@</h1>
+    </div>
+        <p>Nhap Noi Dung:
+            <input type="text" id="txtInput" autofocus value="WELCOME HTML !!!!@" size="50px"/>
+        </p>
+        <p>
+            Mau nen:<input type="coler" id="bkcolor" value="#ff0000">
+        </p>
+            Mau chu:<input type="coler" id="textcolor" value="#ffff00">
+        <p>
+            <input type="button" onclick="changecolor()" value="THUC HIEN"/>
+
+        </p>
+</body>
+</html>

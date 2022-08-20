@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .CanGiua{
+            text-align: center;
+        }
+        .BangGiua{
+            margin:0px auto;
+        }
+        table,td,th{
+            border:1px solid brown;
+        }
+        th{
+            background-color: blue;
+        }
+        a{
+            border: 1px solid black;
+            color:white;
+            font-weight: bold;
+            font-size: large;
+            background-color: blueviolet;
+    
+        }
+        a:hover{
+            color:yellow;
+        }
+    </style>
+    </head>
+    <body>
+        <a href="../jqery.html">Về trang trước</a>
+    <div class="CanGiua">
+        <table id="tb1" class="BangGiua">
+            <caption>Bảng giá vật tư</caption>
+            <tr>
+                <th>Tên vật tư</th>
+                <th>Đơn vị tính</th>
+                <th>Đơn giá</th>
+            </tr>
+            <tr>
+                <td>Cát</td>
+                <td>Khối</td>
+                <td>77,000</td>
+            </tr>
+            <tr>
+                <td>Đá</td>
+                <td>Khối</td>
+                <td>90,000</td>
+            </tr>
+            <tr>
+                <td>Xi măng Hà Tiên loại 1</td>
+                <td>Bao</td>
+                <td>120,000</td>
+            </tr>
+            <tr>
+                <td>Xi măng Hà Tiên loại 2</td>
+                <td>Bao</td>
+                <td>100,000</td>
+            </tr>
+        </table>
+        <button id="btn1">Đổi màu nền</button>
+        <button id="btn2">Màu nền mặc định</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var btn1=$("#btn1");
+            var btn2=$("#btn2");
+            btn1.click(function(){
+                $('#tb1 tr:odd').css('background-color','red');
+            });
+            btn2.click(function(){
+                $('#tb1 tr:odd').css('background-color','white');
+            })
+        });
+    </script>
+</body>
+</html>

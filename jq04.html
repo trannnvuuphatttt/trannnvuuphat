@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #Ngang{
+            display:flex;
+            flex-direction: row;
+        }
+        #Ngang>div{
+            border-width: 1px;
+            border-style: solid;
+            margin:2%;
+            width:100px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        textarea{
+            width:500px;
+            height:300px;
+        }
+        a{
+            border: 1px solid black;
+            color:white;
+            font-weight: bold;
+            font-size: large;
+            background-color: blueviolet;
+    
+        }
+        a:hover{
+            color:yellow;
+        }
+    </style>
+    </head>
+    <body>
+        <a href="../jqery.html">Về trang trước</a>
+    <div>Click lên các hình vuông: </div>
+    <div id="Ngang">
+        <div  style="background-color:red;"></div>
+        <div  style="background-color:blue;"></div>
+        <div  style="background-color :green;"></div>
+        <div  style="background-color:pink;"></div>
+    </div>
+    <div id="kq"></div>
+    <textarea id="mau"></textarea>
+    <script>
+        $(document).ready(function(){
+            $("div div").click(function(){
+                var color=$(this).css("background-color");
+                var name;
+                switch (color){
+                    case "rgb(255,0,0)":
+                        name="Đỏ";
+                        break;
+                    case "rgb(0,0,255)":
+                        name="Xanh dương";
+                        break;
+                    case "rgb(0,255,0)":
+                        name="Xanh lá cây";
+                        break;
+                    case "rgb(255,0,255)":
+                        name="Hồng";
+                        break;
+                }
+                $("#kq").html("ô bạn click có màu "+color);
+                $("#kq").css({'color':color,'font-weight':'bold'});
+                $("#mau").css({'background-color':color});
+            });
+        });
+    </script>
+</body>
+</html>

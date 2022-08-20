@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function taomang(){
+            var i;
+            var n = parseInt (document.getElementById("sopt").value);
+            arr = new Array(n);
+            for ( i = 1; i < n; i++)
+                arr[i] = Math.floor(Math.random()*100 )% 50;
+            document.getElementById("txtarray").value = arr.join(" ");
+        }
+        function tang(a,b){
+            return a - b;
+        }
+        function mangtang(){
+            arr.sopt();
+            document.getElementById("txtarray2").value = arr.join(" ");
+        }
+        function giam(a,b){
+            return b - a;
+        }
+        function manggiam(){
+            arr.sopt();
+            document.getElementById("txtarray3").value = arr.join(" ");
+        }
+    </script>
+</head>
+<body>
+    <label for="sopt">NHAP SO PHAN TU</label>
+    <input type="number" id="sopt" value="10" size="10">
+    <br/>
+    <button onclick="taomang"> TAO MANG</button>
+    <button onclick="mangtang"> SAP XEP MANG TANG DAN</button>
+    <button onclick="manggiam"> SAP XEP MANG GIAM DAN</button>
+    <br>
+    <label for="txtarray">MANG BAN DAU</label>
+    <input type="text" id="txtarray" size="50">
+    <br>
+    <label for="txtarray2">MANG TANG DAN</label>
+    <input type="text" id="txtarray2" size="50">
+    <br>
+    <label for="txtarray3">MANG GIAM DAN</label>
+    <input type="text" id="txtarray3" size="50">
+</body>
+</html>
+

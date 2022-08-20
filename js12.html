@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onLoad="draw()">
+    <canvas id="canvas" width="400px" height="400px"></canvas>
+<script>
+    function draw(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = "rgb(0,255,255)";
+        ctx.fillRect(0,0,400,400);
+        ctx.beginPath();
+        ctx.arc(200,200,200,0,2*Math.Pi);
+        var grd = ctx.createLinearGradient(0,0,0,canvas.height);
+        grd.addColorStop(0,"blue");
+        grd.addColorStop(1,"white");
+        grd.addColorStop(0,"red");
+        ctx.fillStyle = grd;
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(200,0);
+        ctx.lineTo(400,200);
+        ctx.lineTo(200,400);
+        ctx.lineTo(0,200);
+        ctx.lineTo(200,0);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.strokeStyle = 'cyan';
+        ctx.lineWidth =3;
+        ctx.stroke();
+        ctx.font ="80px arial";
+        ctx.lineWidth = 5;
+        ctx.strokeStyle='blue';
+        ctx.strokeText('HTML')
+        
+
+    }
+</script>
+    
+</body>
+</html>
