@@ -1,0 +1,18 @@
+body{
+    background-color: blueviolet;
+}
+.GiuaAll{
+    text-align:center;
+}
+.GiuaTaBle{
+    margin:0px auto;
+    border-width: 5px;
+}
+table{
+    background-color: bisque;
+    width:500px; 
+    height:200px;
+}
+table,tr,td{
+    border:5px solid black;
+}
